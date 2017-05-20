@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="../../template/templatelogin.xhtml">
+
+	<ui:define name="body">
+
+		<h:form id="form">
+			<p:growl id="growl" showDetail="false" />
+
+
+			<center style="padding-top: 140px;">
+				<p:panel id="pnl" header="Login"
+					style="width:340px; text-align:left;">
+					<center>
+						<p:panelGrid columns="2" styleClass="semBorda">
+							<p:outputLabel value="Usuário: " for="usuario" />
+							<p:inputText id="usuario" size="20" required="true"
+								requiredMessage="Informe o usuário."
+								value="#{MBUsuarios.usuario.login}" />
+
+							<p:outputLabel value="Senha: " for="senha" />
+							<p:password id="senha" size="20" required="true"
+								requiredMessage="Informe a Senha."
+								value="#{MBUsuarios.usuario.senha}" maxlength="200" />
+						</p:panelGrid>
+
+						<p:separator />
+						<p:commandButton value="Entrar" icon="entrar"
+							action="#{MBUsuarios.login()}" update="growl, pnl" />
+					</center>
+				</p:panel>
+			</center>
+
+		</h:form>
+
+		
+
+	</ui:define>
+</ui:composition>
+</html>

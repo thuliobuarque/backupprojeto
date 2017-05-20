@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="../../template/templatelogin.xhtml">
+
+	<ui:define name="body">
+
+			<h:form>
+			
+				<p:dataTable emptyMessage="Sem Dados" styleClass="table table-hover"
+					id="tabela" style="margin-top:20px;" 
+					value="#{MBUsuarios.listaUsuario}" var="tab" rows="5"
+					paginator="true" paginatorPosition="bottom">
+				
+
+					<p:column headerText="ID" style="font-weight:bold; width:15%">
+						<h:outputText value="#{tab.codigo}" />
+					</p:column>
+					
+					<p:column headerText="Nome" style="font-weight:bold; width:15%">
+						<h:outputText value="#{tab.nome}" />
+					</p:column>
+					
+						<p:column headerText="Login" style="font-weight:bold; width:15%">
+						<h:outputText value="#{tab.login}" />
+					</p:column>
+					
+					<p:column headerText="Senha" style="font-weight:bold; width:15%">
+						<h:outputText value="#{tab.senha}" />
+					</p:column>
+
+				</p:dataTable>
+			
+			
+			
+			</h:form>
+
+	</ui:define>
+</ui:composition>
+</html>
